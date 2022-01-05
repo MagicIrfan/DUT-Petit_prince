@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>connexion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="ionicForm" (ngSubmit)= "connexion()">
+      <ion-item>
+        <ion-label>Login :</ion-label>
+        <ion-input type="text" formControlName="login" required></ion-input>
+        <div class="validation-errors">
+          <div class="error-message" *ngIf="ionicForm.get('login').hasError(validation_messages.login[0].type)">
+            {{ validation_messages.login[0].message }}
+          </div>
+        </div>
+      </ion-item>
+      <ion-item>
+        <ion-label>Mot de passe :</ion-label>
+        <ion-input type="password" formControlName="mdp"></ion-input>
+        <div class="validation-errors">
+          <div class="error-message" *ngIf="ionicForm.get('mdp').hasError(validation_messages.mdp[0].type)">
+            {{ validation_messages.mdp[0].message }}
+          </div>
+        </div>
+      </ion-item>
+      <ion-row>
+        <ion-col>
+            <ion-button type="submit" expand="block">Se connecter</ion-button>
+        </ion-col>
+      </ion-row>
+  </form>
+</ion-content>

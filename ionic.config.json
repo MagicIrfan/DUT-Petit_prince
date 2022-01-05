@@ -1,0 +1,7 @@
+{
+  "name": "projet_IRFAN_ALBA",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
